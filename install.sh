@@ -4,6 +4,7 @@ set -euo pipefail
 
 ZEROREPO="${ZEROREPO:-https://github.com/ronaldanton/zero-agent}"
 ZERODIR="$HOME/.zero-agent"
+export PATH="$HOME/.local/bin:$PATH"
 PROFILE="zero"
 
 echo "[zero] 1/3 Installing Hermes Agent core..."
