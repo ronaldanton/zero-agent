@@ -26,8 +26,7 @@ if $TS_MODE; then
   fi
   if [ -n "${TOKENHARBOR_API_KEY:-}" ]; then
     mkdir -p "$HOME/.local/share/opencode"
-    echo "{\"tokenharbor\":{\"type\":\"api\",\"key\":\"$TOKENHARBOR_API_KEY\"}}"
-      > "$HOME/.local/share/opencode/auth.json"
+    printf '{"tokenharbor":{"type":"api","key":"%s"}}\n' "$TOKENHARBOR_API_KEY" > "$HOME/.local/share/opencode/auth.json"
     mkdir -p "$HOME/.config/opencode"
     cat > "$HOME/.config/opencode/opencode.json" <<'OC'
 {
